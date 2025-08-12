@@ -1,0 +1,487 @@
+*{
+    padding : 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    line-height: 64px;
+    font-size: 50px;
+    color: #c1b385;
+}
+
+h2{
+    line-height: 54px;
+    font-size: 46px;
+    color: #162938;
+}
+
+h3{
+    line-height: 44px;
+    font-size: 40px;
+}
+
+h4{
+    font-size: 20px;
+    color: #162938;
+}
+
+h6{
+    font-weight: 600;
+    font-size: 12px; 
+}
+
+p{
+    color: #162938;
+    font-size: 16px;
+    margin: 15px 0 20px 0;
+}
+.section-p1{
+
+    padding: 40px 80px;
+}
+
+.section-m1{
+
+    margin: 40px 0;
+}
+
+body {
+    width: 100%;
+    padding-top: 150px;
+    /*background: url('background.jpg') no-repeat;*/
+    background-color: white;
+    background-size: cover; 
+    min-height: 100vh;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(30px);
+    z-index: 999;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #c1b385;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+}
+
+.icon-enlarge{
+
+    font-size: 21.5px;
+}
+
+#banner{
+
+    background-color: transparent;
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#banner h2{
+    color: #c1b385;
+}
+
+.highlight{
+    color: #c1b385;
+}
+
+#categories {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#categories .container {
+    /* background-color: #eddab3; */
+    /* background-color: #b6af96; */
+    background-color: transparent;
+     width: 220px;
+     text-align: center;
+     padding: 25px 15px;
+     /* box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03); */
+     border: 1px;
+     border-radius: 4px;
+     margin: 15px 0;
+}
+
+#categories .container:hover{
+    box-shadow: 10px 10px 54px #162938;
+}
+
+#categories .container img{
+
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+#categories .container h5{
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #162938;
+    background-color: rgb(219, 209, 196);
+    display: inline-block;
+}
+
+#area {
+    padding: 40px 80px;
+}
+
+#area h4 {
+    margin-bottom: 15px;
+    color: #162938;
+    font-size: 20px;
+}
+
+.areaP,
+.areaC {
+    display: flex;
+    flex-direction: row;   
+    flex-wrap: wrap;          
+    gap: 13px;                
+    margin-bottom: 30px;      
+}
+
+.areaP button,
+.areaC button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: rgb(219, 209, 196);
+    color: black;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.areaP button:hover,
+.areaC button:hover {
+    background-color: #a49367;
+}
+
+#area h4 {
+    margin: 30px 0 15px 0;
+    color: #162938;
+    font-size: 20px;
+}
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid beige;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, -5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    transition: height .2s ease;
+}
+
+.wrapper.active{
+    height: 520px;
+
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    display: block;
+}
+
+.wrapper .form-box.register {
+    display: none;
+}
+
+/* When active: show register, hide login */
+.wrapper.active .form-box.login {
+    display: none;
+}
+
+.wrapper.active .form-box.register {
+    display: block;
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    margin: 15px;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 45px;
+    font-size: 1.5em;
+}
+
+.form-box h2{
+    font-size: 2em;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: black;
+    line-height: 57px;
+}
+
+.remember-forgot{
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.input-box select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding-left: 5px;
+    border-bottom: 2px solid black;
+    margin-top: 10px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.role-select {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.role-select label {
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.role-select select {
+    height: 40px;
+    font-size: 1em;
+    font-weight: 500;
+    color: black;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    outline: none;
+}
+
+.errorMessage {
+    padding: 12px;
+    background: #f8d7da;
+    border-radius: 6px;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cont button {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-size: 16px;
+    animation: fadeOut 4s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+.placeProducts {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.placeProducts .productBox {
+    /* background-color: #eddab3; */
+    /* background-color: #b6af96; */
+    background-color: transparent;
+     width: 400px;
+     text-align: center;
+     padding: 25px 15px;
+     /* box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03); */
+     border: 1px;
+     border-radius: 4px;
+     margin: 15px 0;
+
+}
+
+.placeProducts .productBox:hover{
+    box-shadow: 10px 10px 54px #162938;
+}
+
+.placeProducts .productBox img{
+
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.placeProducts .productBox h3{
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #162938;
+    background-color: rgb(219, 209, 196);
+    display: inline-block;
+}
+
+
+
